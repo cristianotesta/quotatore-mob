@@ -1,74 +1,95 @@
-/* Reset e impostazioni di base */
+/* Reset di base */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* Impostazioni globali */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  color: #333;
   padding: 20px;
-  color: #343a40;
 }
 
-/* Container centrale con effetto card */
+/* Container principale */
 .container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Titoli centrati e puliti */
-h1, h2 {
+/* Titoli e sottotitoli */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.subheading {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Sezione informazioni */
+.info-section {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 0.9rem;
 }
 
-/* Sezioni con margine */
-.upload-section, .search-section, .results-section {
-  margin-bottom: 30px;
+/* Sezione di ricerca */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-/* Stile degli elementi di input e pulsanti */
-.upload-section p,
 .search-section input,
 .search-section select,
 .search-section button {
   width: 100%;
-  margin-bottom: 10px;
-  display: block;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
-input[type="text"],
-select {
-  padding: 12px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  font-size: 16px;
-  background: #fff;
+/* Stile degli input e select */
+.search-section input,
+.search-section select {
+  background: #f9f9f9;
 }
 
-button {
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  font-size: 16px;
+/* Stile dei pulsanti */
+.search-section button,
+.remove-btn {
+  background: linear-gradient(90deg, #007bff, #00aaff);
   color: #fff;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+.search-section button:hover,
+.remove-btn:hover {
+  background: linear-gradient(90deg, #0056b3, #0088cc);
 }
 
-/* Stile per i risultati */
+/* Sezione risultati */
 .results-section h2 {
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  color: #444;
 }
 
 #taskCardsContainer {
@@ -77,35 +98,38 @@ button:hover {
   gap: 15px;
 }
 
+/* Stile delle TaskCard */
 .task-card {
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
   padding: 15px;
-  background: #f1f3f5;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .task-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .task-card p {
   margin: 8px 0;
-  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
-/* Responsive per dispositivi mobili */
+/* Ottimizzazione per dispositivi mobili */
 @media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
   .container {
-    padding: 20px;
+    padding: 15px;
   }
-  button, input[type="text"], select {
-    font-size: 14px;
+  h1 {
+    font-size: 1.8rem;
+  }
+  .search-section input,
+  .search-section select,
+  .search-section button {
     padding: 10px;
+    font-size: 0.9rem;
   }
   .task-card {
     padding: 10px;
