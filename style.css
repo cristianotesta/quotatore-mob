@@ -1,122 +1,67 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
 
-\f0\fs24 \cf0 /* Reset e impostazioni di base */\
-* \{\
-  box-sizing: border-box;\
-\}\
-\
-body \{\
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);\
-  margin: 0;\
-  padding: 20px;\
-  color: #343a40;\
-\}\
-\
-/* Container centrale con effetto card */\
-.container \{\
-  max-width: 800px;\
-  margin: 0 auto;\
-  background: #fff;\
-  padding: 30px;\
-  border-radius: 10px;\
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);\
-\}\
-\
-/* Titoli centrati e puliti */\
-h1, h2 \{\
-  text-align: center;\
-  margin-bottom: 20px;\
-\}\
-\
-/* Sezioni con margine */\
-.upload-section, .search-section, .results-section \{\
-  margin-bottom: 30px;\
-\}\
-\
-/* Stile degli elementi di input e pulsanti */\
-.upload-section label,\
-.search-section input,\
-.search-section select,\
-.search-section button \{\
-  width: 100%;\
-  margin-bottom: 10px;\
-  display: block;\
-\}\
-\
-input[type="file"],\
-input[type="text"],\
-select \{\
-  padding: 12px;\
-  border: 1px solid #ced4da;\
-  border-radius: 5px;\
-  font-size: 16px;\
-  background: #fff;\
-\}\
-\
-button \{\
-  padding: 12px;\
-  border: none;\
-  border-radius: 5px;\
-  background-color: #007bff;\
-  font-size: 16px;\
-  color: #fff;\
-  cursor: pointer;\
-  transition: background-color 0.3s ease;\
-\}\
-\
-button:hover \{\
-  background-color: #0056b3;\
-\}\
-\
-/* Stile per i risultati */\
-.results-section h2 \{\
-  margin-bottom: 20px;\
-\}\
-\
-#taskCardsContainer \{\
-  display: flex;\
-  flex-direction: column;\
-  gap: 15px;\
-\}\
-\
-.task-card \{\
-  border: 1px solid #dee2e6;\
-  border-radius: 8px;\
-  padding: 15px;\
-  background: #f1f3f5;\
-  transition: transform 0.2s ease, box-shadow 0.2s ease;\
-\}\
-\
-.task-card:hover \{\
-  transform: translateY(-3px);\
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\
-\}\
-\
-.task-card p \{\
-  margin: 8px 0;\
-  line-height: 1.5;\
-\}\
-\
-/* Responsive per dispositivi mobili */\
-@media (max-width: 600px) \{\
-  body \{\
-    padding: 10px;\
-  \}\
-  .container \{\
-    padding: 20px;\
-  \}\
-  button, input[type="text"], select \{\
-    font-size: 14px;\
-    padding: 10px;\
-  \}\
-  .task-card \{\
-    padding: 10px;\
-  \}\
-\}\
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.upload-section, .search-section, .results-section {
+  margin-bottom: 20px;
+}
+
+.upload-section label, 
+.search-section input, 
+.search-section select, 
+.search-section button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.search-section input, 
+.search-section select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-section button, 
+.results-section button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-section button:hover, 
+.results-section button:hover {
+  background-color: #0056b3;
+}
+
+.task-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.task-card p {
+  margin: 5px 0;
 }
