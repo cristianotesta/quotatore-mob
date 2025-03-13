@@ -4,20 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestione TaskCard Manutenzione Aerei</title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <!-- Libreria SheetJS per leggere il file Excel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Gestione TaskCard Manutenzione Aerei</h1>
+    <h1>Gestione TaskCard</h1>
+    <p class="subheading">Manutenzione Aerei - TaskCard</p>
     
-    <!-- Sezione informativa: il file Excel viene caricato automaticamente -->
-    <div class="upload-section">
-      <p>Il file Excel <strong>airplanes.xlsx</strong> è integrato e caricato automaticamente.</p>
+    <!-- Informazione sul file Excel integrato -->
+    <div class="info-section">
+      <p>Il file <strong>airplanes.xlsx</strong> è integrato e caricato automaticamente.</p>
     </div>
     
-    <!-- Sezione per la ricerca -->
+    <!-- Sezione di ricerca -->
     <div class="search-section">
       <input type="text" id="searchInput" placeholder="Cerca TaskCard...">
       <select id="airplaneModel">
@@ -37,7 +40,7 @@
     <div class="results-section">
       <h2>Risultati TaskCard</h2>
       <div id="taskCardsContainer"></div>
-      <button id="removeTasksBtn">Rimuovi Task Inserite</button>
+      <button id="removeTasksBtn" class="remove-btn">Rimuovi Task</button>
     </div>
   </div>
   <script src="script.js"></script>
