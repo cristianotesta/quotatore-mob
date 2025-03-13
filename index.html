@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestione TaskCard Manutenzione Aerei</title>
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Libreria SheetJS per leggere il file Excel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Sfondo animato -->
+  <div class="background-overlay"></div>
   <div class="container">
-    <h1>Gestione TaskCard</h1>
-    <p class="subheading">Manutenzione Aerei - TaskCard</p>
-    
-    <!-- Informazione sul file Excel integrato -->
+    <header>
+      <h1>Gestione TaskCard</h1>
+      <p class="tagline">La manutenzione degli aerei, reinventata.</p>
+    </header>
     <div class="info-section">
-      <p>Il file <strong>airplanes.xlsx</strong> è integrato e caricato automaticamente.</p>
+      <p>Il file <strong>airplanes.xlsx</strong> è caricato automaticamente.</p>
     </div>
-    
-    <!-- Sezione di ricerca -->
     <div class="search-section">
       <input type="text" id="searchInput" placeholder="Cerca TaskCard...">
       <select id="airplaneModel">
@@ -35,8 +35,6 @@
       </select>
       <button id="searchBtn">Cerca</button>
     </div>
-    
-    <!-- Sezione per visualizzare i risultati -->
     <div class="results-section">
       <h2>Risultati TaskCard</h2>
       <div id="taskCardsContainer"></div>
