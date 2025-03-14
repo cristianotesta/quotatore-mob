@@ -76,13 +76,13 @@ document.getElementById('searchBtn').addEventListener('click', function() {
       return;
     }
     
-    // Converte il foglio in JSON
+    // Converte il foglio in formato JSON e rimuove l'intestazione in modo case-insensitive
     let data = XLSX.utils.sheet_to_json(worksheet, { header: "A" });
-    if (data.length > 0 && data[0].A === 'TaskNo') {
+    if (data.length > 0 && typeof data[0].A === 'string' && data[0].A.toLowerCase() === 'taskno') {
       data.shift();
     }
     
-    // Filtra le task in base alla query (ricerca in tutte le colonne)
+    // Filtra le task in base alla query (ricerca case-insensitive in tutte le colonne)
     let filteredTasks = data.filter(task => {
       const taskString = `${task.A} ${task.B} ${task.C} ${task.D} ${task.E}`.toLowerCase();
       return taskString.includes(queryInput);
