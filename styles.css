@@ -65,51 +65,79 @@ header h1 {
   color: #bbb;
 }
 
-/* Sezione di ricerca */
-.search-section {
+/* Sezione righe di ricerca dinamiche */
+.search-rows-section {
+  margin-bottom: 20px;
+}
+
+#searchRowsContainer .search-row {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 25px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.search-section input,
-.search-section select,
-.search-section button {
-  padding: 12px 15px;
-  font-size: 1rem;
+.search-row input.searchInput,
+.search-row select.airplaneModel {
+  flex: 1;
+  padding: 10px;
   border: none;
-  border-radius: 8px;
-  outline: none;
-}
-
-.search-section input,
-.search-section select {
+  border-radius: 5px;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
 
-.search-section input::placeholder {
+.search-row input.searchInput::placeholder {
   color: #ccc;
 }
 
-.search-section button {
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
+.search-row button.removeRow {
+  background: #e52e71;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
   color: #fff;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.search-section button:hover {
-  transform: scale(1.05);
+.search-row button.removeRow:hover {
+  transform: scale(1.1);
+}
+
+#addSearchRow {
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 15px;
+}
+
+#addSearchRow:hover {
+  background: #0056b3;
+}
+
+/* Pulsante principale di ricerca */
+#searchBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+#searchBtn:hover {
+  transform: scale(1.02);
   box-shadow: 0 4px 15px rgba(229,46,113,0.6);
 }
 
 /* Sezione risultati */
-.results-section {
-  margin-top: 20px;
-}
-
 .results-section h2 {
   text-align: center;
   margin-bottom: 15px;
@@ -117,45 +145,45 @@ header h1 {
   color: #ff8a00;
 }
 
-#taskCardsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+#resultsContainer {
+  margin-bottom: 20px;
 }
 
-/* Stile delle TaskCard */
-.task-card {
-  background: rgba(0, 0, 0, 0.3);
-  border-left: 4px solid #e52e71;
-  padding: 15px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Stile tabelle risultati */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.task-card:hover {
-  transform: translateX(5px);
-  box-shadow: 0 5px 20px rgba(229,46,113,0.5);
+.results-table th, .results-table td {
+  border: 1px solid #444;
+  padding: 8px;
+  text-align: left;
 }
 
-.task-card p {
-  margin: 5px 0;
-  font-size: 0.9rem;
+.results-table th {
+  background: #262626;
+  color: #ff8a00;
 }
 
-/* Pulsante per rimuovere i task */
-.remove-btn {
-  margin-top: 15px;
-  background: #e52e71;
-  padding: 12px 15px;
-  border-radius: 8px;
+.results-table td {
+  background: #1a1a1a;
+}
+
+/* Pulsante copia risultati */
+#copyResultsBtn {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
   border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: #fff;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-.remove-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(229,46,113,0.6);
+#copyResultsBtn:hover {
+  background: linear-gradient(90deg, #e52e71, #ff8a00);
 }
 
 /* Animazione glow per il titolo */
@@ -177,13 +205,15 @@ header h1 {
   header h1 {
     font-size: 2rem;
   }
-  .search-section input,
-  .search-section select,
-  .search-section button {
-    padding: 10px;
+  .search-row input.searchInput,
+  .search-row select.airplaneModel,
+  #addSearchRow,
+  #searchBtn,
+  #copyResultsBtn {
+    padding: 8px 10px;
     font-size: 0.9rem;
   }
-  .task-card {
-    padding: 10px;
+  .results-table th, .results-table td {
+    padding: 6px;
   }
 }
