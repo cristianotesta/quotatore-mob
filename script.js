@@ -66,7 +66,8 @@ document.getElementById('searchBtn').addEventListener('click', function() {
   const searchRows = document.querySelectorAll('#searchRowsContainer .search-row');
   
   searchRows.forEach((row, index) => {
-    const queryInput = row.querySelector('.searchInput').value.toLowerCase();
+    // Prende la query e la converte in minuscolo, eliminando eventuali spazi iniziali/finali
+    const queryInput = row.querySelector('.searchInput').value.toLowerCase().trim();
     const modelSelect = row.querySelector('.airplaneModel').value;
     
     // Seleziona il foglio relativo al modello scelto
@@ -76,15 +77,15 @@ document.getElementById('searchBtn').addEventListener('click', function() {
       return;
     }
     
-    // Converte il foglio in formato JSON e rimuove l'intestazione in modo case-insensitive
+    // Converte il foglio in JSON e rimuove l'intestazione se presente (case-insensitive)
     let data = XLSX.utils.sheet_to_json(worksheet, { header: "A" });
-    if (data.length > 0 && typeof data[0].A === 'string' && data[0].A.toLowerCase() === 'taskno') {
+    if (data.length > 0 && typeof data[0].A === 'string' && data[0].A.toLowerCase().trim() === 'taskno') {
       data.shift();
     }
     
-    // Filtra le task in base alla query (ricerca case-insensitive in tutte le colonne)
+    // Filtra le task in base alla query: concatena tutte le celle (dopo averle convertite in stringa e trimmate) e confronta in minuscolo
     let filteredTasks = data.filter(task => {
-      const taskString = `${task.A} ${task.B} ${task.C} ${task.D} ${task.E}`.toLowerCase();
+      const taskString = `${(task.A || '').toString().trim()} ${(task.B || '').toString().trim()} ${(task.C || '').toString().trim()} ${(task.D || '').toString().trim()} ${(task.E || '').toString().trim()}`.toLowerCase();
       return taskString.includes(queryInput);
     });
     
@@ -128,11 +129,11 @@ document.getElementById('searchBtn').addEventListener('click', function() {
       filteredTasks.forEach(task => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${task.A || ''}</td>
-          <td>${task.B || ''}</td>
-          <td>${task.C || ''}</td>
-          <td>${task.D || ''}</td>
-          <td>${task.E || ''}</td>
+          <td>${(task.A || '').toString().trim()}</td>
+          <td>${(task.B || '').toString().trim()}</td>
+          <td>${(task.C || '').toString().trim()}</td>
+          <td>${(task.D || '').toString().trim()}</td>
+          <td>${(task.E || '').toString().trim()}</td>
         `;
         tbody.appendChild(tr);
       });
