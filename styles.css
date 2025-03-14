@@ -90,6 +90,17 @@ header h1 {
   color: #ccc;
 }
 
+/* Styling per il select e le option: sfondo scuro e testo bianco */
+select {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+select option {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
 .search-row button.removeRow {
   background: #e52e71;
   border: none;
